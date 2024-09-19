@@ -18,3 +18,9 @@ jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
     steps: # 하나의 Job은 여러개의 Step으로 이루어져있다.
       - name: Hello World 출력하기 # 이름
         run: echo "Hello World" # 어떤 명령어를 실행시킬 것인가
+
+      - name: 여러 명령어 문장 작성하기
+        run: |
+          echo "Good"
+          echo "Morning"
+          pwd
