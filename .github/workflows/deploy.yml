@@ -1,0 +1,10 @@
+name: Github Actions 실행시켜보기
+
+on: # 할 때 마다
+  push: # 푸시
+    branches: # 브랜치에
+      - main # main이라는
+
+# on, push, branches 문법 의미
+# main이라는 브랜치에 push를 할 때 마다 작업을 실행 시키겠다.
+# 테스트중....
