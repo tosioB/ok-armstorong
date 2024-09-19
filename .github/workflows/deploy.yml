@@ -33,7 +33,7 @@ jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
           echo $GITHUB_REPOSITORY
           echo $GITHUB_SHA
 
-      - name: Github Actions Secret 변수 사용해보기
+      - name: Github Actions Secret 변수 사용해보기2
         run: |
           echo ${{ secrets.MY_NAME }}
           echo ${{ secrets.MY_HOBBY }}
