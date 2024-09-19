@@ -20,16 +20,20 @@ jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
         run: echo "Hello World" # 어떤 명령어를 실행시킬 것인가
 
       - name: 여러 명령어 문장 작성하기
+        # pwd - 현재 경로 출력
         run: |
           echo "Good"
           echo "Morning"
           pwd
-      # pwd - 현재 경로 출력
+
       - name: Github Actions 자체 저장되어 있는 변수 사용해보기
+        # echo $GITHUB_REPOSITORY - 현재 레포지토리의 이름(이미 운영체제에 저장되어있는 변수)
+        # echo $GITHUB_SHA - 커밋의 고유 아이디 값(이미 운영체제에 저장되어있는 변수)
         run: |
           echo $GITHUB_REPOSITORY
           echo $GITHUB_SHA
 
-# echo $GITHUB_REPOSITORY - 이미 운영체제에 저장되어있는 변수
-# echo $GITHUB_SHA - 이미 운영체제에 저장되어있는 변수
-
+      - name: Github Actions Secret 변수 사용해보기
+        run: |
+          echo ${{ secrets.MY_NAME }}
+          echo ${{ secrets.MY_HOBBY }}
