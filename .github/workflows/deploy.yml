@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # uses: actions/checkout@v4 - 라이브러리
+      # uses - 라이브러리
       # uses: actions/checkout@v4 - GitHub Actions에서 리포지토리의 코드를 체크아웃(다운로드)하기 위해 사용하는 액션
       # uses: actions/checkout@v4 - 이 단계는 워크플로우의 첫 번째 단계에서 주로 사용
       - name: Github Repository 파일 불러오기
@@ -22,12 +22,25 @@ jobs:
       - name: 빌드하기
         run: npm run build
 
-      - name: Defugging
+      - name: AWS Resource에 접근할 수 있게 AWS 인증 설정
+        uses: aws-actions/configure-aws-credentials@v4
+          with:
+            aws-region: ap-northeast-2
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+
+      - name: S3 기존 파일들 전체 삭제
+        # rm - remove
+        # recursive - 지정한 S3 버킷 또는 경로 내의 모든 객체를 재귀적으로 삭제
         run: |
-          ls
-          echo "-----------------"
-          cd dist
-          ls
+          aws s3 rm --recursive s3://ok-armstorong
+
+      # - name: Defugging
+      #   run: |
+      #     ls
+      #     echo "-----------------"
+      #     cd dist
+      #     ls
 
 #
 #
