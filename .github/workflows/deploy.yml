@@ -9,12 +9,12 @@ on: # 할 때 마다
 # on, push, branches 문법 의미
 # main이라는 브랜치에 push를 할 때 마다 작업을 실행 시키겠다.
 
-# jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
-#   My-Deploy-Job:
-#     runs-on: ubuntu-latest # ubuntu라는 운영체제를 가장 최근 버전으로 사용하겠다.
-#     # ubuntu - 운영체제중 하나
-#     # latest - 가장 최근 버전
+jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
+  My-Deploy-Job:
+    runs-on: ubuntu-latest # ubuntu라는 운영체제를 가장 최근 버전으로 사용하겠다.
+    # ubuntu - 운영체제중 하나
+    # latest - 가장 최근 버전
 
-#     steps: # 하나의 Job은 여러개의 Step으로 이루어져있다.
-#       - name: Hello World 출력하기 # 이름
-#         run: echo "Hello World" # 어떤 명령어를 실행시킬 것인가
+    steps: # 하나의 Job은 여러개의 Step으로 이루어져있다.
+      - name: Hello World 출력하기 # 이름
+        run: echo "Hello World" # 어떤 명령어를 실행시킬 것인가
