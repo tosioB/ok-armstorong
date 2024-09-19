@@ -40,6 +40,11 @@ jobs:
         # aws s3 cp ./dist s3://ok-armstorong/ --recursive - 로컬 디렉토리 ./dist의 모든 파일과 폴더를 S3 버킷 ok-armstorong으로 재귀적으로 복사
         run: aws s3 cp ./dist s3://ok-armstorong/ --recursive
 
+      - name: Cloudfront 캐시 무효화
+        # distribution-id - 배포아이디
+        # aws cloudfront create-invalidation --distribution-id E3VKYAQS7A5SWI --paths "/*" - CloudFront 배포에서 모든 캐시된 객체를 무효화(invalidate)하는 명령
+        run: aws cloudfront create-invalidation --distribution-id E3VKYAQS7A5SWI --paths "/*"
+
       # - name: Defugging
       #   run: |
       #     ls
