@@ -24,3 +24,12 @@ jobs: # Workflow는 여러개의 Job으로 이루어질 수 있다.
           echo "Good"
           echo "Morning"
           pwd
+      # pwd - 현재 경로 출력
+      - name: Github Actions 자체 저장되어 있는 변수 사용해보기
+        run: |
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_SHA
+
+# echo $GITHUB_REPOSITORY - 이미 운영체제에 저장되어있는 변수
+# echo $GITHUB_SHA - 이미 운영체제에 저장되어있는 변수
+
