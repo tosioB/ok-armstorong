@@ -35,7 +35,7 @@ jobs:
         # aws s3 rm --recursive s3://ok-armstorong - S3 버킷 ok-armstorong 내의 모든 파일과 폴더를 재귀적으로 삭제
         run: aws s3 rm --recursive s3://ok-armstorong
 
-        name: S3에 빌드된 파일 업로드 하기
+      - name: S3에 빌드된 파일 업로드 하기
           # cp - copy
           # aws s3 cp ./dist s3://ok-armstorong/ --recursive - 로컬 디렉토리 ./dist의 모든 파일과 폴더를 S3 버킷 ok-armstorong으로 재귀적으로 복사
           run: aws s3 cp ./dist s3://ok-armstorong/ --recursive
