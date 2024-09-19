@@ -44,13 +44,6 @@ jobs:
         # distribution-id - 배포아이디
         # aws cloudfront create-invalidation --distribution-id E3VKYAQS7A5SWI --paths "/*" - CloudFront 배포에서 모든 캐시된 객체를 무효화(invalidate)하는 명령
         run: aws cloudfront create-invalidation --distribution-id E3VKYAQS7A5SWI --paths "/*"
-
-      # - name: Defugging
-      #   run: |
-      #     ls
-      #     echo "-----------------"
-      #     cd dist
-      #     ls
 #
 #
 #
