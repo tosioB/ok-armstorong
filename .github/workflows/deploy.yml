@@ -8,13 +8,23 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # uses: actions/checkout@v4 - 라이브러리
+
     steps:
+      # uses: actions/checkout@v4 - 라이브러리
+      # uses: actions/checkout@v4 - GitHub Actions에서 리포지토리의 코드를 체크아웃(다운로드)하기 위해 사용하는 액션
+      # uses: actions/checkout@v4 - 이 단계는 워크플로우의 첫 번째 단계에서 주로 사용
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
 
-      - name: Repository 파일 출력하기
-        run: ls
+      - name: 빌드하기
+        run: npm run build
+
+      - name: Defugging
+        run: |
+          ls
+          cd dist
+          ls
+
 #
 #
 #
