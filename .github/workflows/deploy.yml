@@ -25,6 +25,7 @@ jobs:
       - name: Defugging
         run: |
           ls
+          echo "-----------------"
           cd dist
           ls
 
